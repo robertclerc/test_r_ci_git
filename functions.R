@@ -34,3 +34,5 @@ df=data.frame(a=c(1,2,3),b=c(4,5,6))
 df2=df %>% mutate(c=a+b)
 
 print(df2)
+
+print(df2)
