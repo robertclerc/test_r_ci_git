@@ -1,4 +1,4 @@
-name: Lint R code
+name: Lint and Test R code
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  lintr:
+  checks:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,7 +21,19 @@ jobs:
         with:
           packages: |
             any::lintr
+            any::testthat
 
       - name: Run lintr
         run: |
           Rscript -e "lintr::lint_dir()"
+
+      - name: Run tests
+        run: |
+          Rscript -e "testthat::test_dir('tests/testthat')"        
+          
+          
+          
+  
+
+
+
