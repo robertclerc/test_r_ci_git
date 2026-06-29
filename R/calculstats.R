@@ -1,4 +1,4 @@
-calculStat <- function(x, y) {
+calculstats <- function(x, y) {
   result <- x + y
 
   if (length(result) > 10) {

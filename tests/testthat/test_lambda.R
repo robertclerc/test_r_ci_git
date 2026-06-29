@@ -1,20 +1,20 @@
 library(testthat)
 
 
-test_that("calculStat retourne un data.frame", {
-  res <- calculStat(c(1, 2, 3), 1)
+test_that("calculstats retourne un data.frame", {
+  res <- calculstats(c(1, 2, 3), 1)
 
   expect_s3_class(res, "data.frame")
 })
 
-test_that("calculStat retourne une colonne nommée 'valeur'", {
-  res <- calculStat(c(1, 2, 3), 1)
+test_that("calculstats retourne une colonne nommée 'valeur'", {
+  res <- calculstats(c(1, 2, 3), 1)
 
   expect_named(res, "valeur")
 })
 
-test_that("calculStat effectue correctement le calcul", {
-  res <- calculStat(c(1, 2, 3), 1)
+test_that("calculstats effectue correctement le calcul", {
+  res <- calculstats(c(1, 2, 3), 1)
 
   expect_equal(
     res$valeur,
@@ -22,8 +22,8 @@ test_that("calculStat effectue correctement le calcul", {
   )
 })
 
-test_that("calculStat fonctionne avec un scalaire", {
-  res <- calculStat(5, 2)
+test_that("calculstats fonctionne avec un scalaire", {
+  res <- calculstats(5, 2)
 
   expect_equal(
     res$valeur,
@@ -31,10 +31,10 @@ test_that("calculStat fonctionne avec un scalaire", {
   )
 })
 
-test_that("calculStat conserve la longueur du vecteur", {
+test_that("calculstats conserve la longueur du vecteur", {
   x <- 1:5
 
-  res <- calculStat(x, 1)
+  res <- calculstats(x, 1)
 
   expect_equal(
     nrow(res),
@@ -42,15 +42,15 @@ test_that("calculStat conserve la longueur du vecteur", {
   )
 })
 
-test_that("calculStat affiche un message pour un vecteur de plus de 10 éléments", {
+test_that("calculstats affiche un message pour un vecteur de plus de 10 éléments", {
   expect_output(
-    calculStat(1:11, 1),
+    calculstats(1:11, 1),
     "grand vecteur"
   )
 })
 
-test_that("calculStat fonctionne avec un vecteur vide", {
-  res <- calculStat(numeric(0), 1)
+test_that("calculstats fonctionne avec un vecteur vide", {
+  res <- calculstats(numeric(0), 1)
 
   expect_equal(
     nrow(res),
@@ -63,8 +63,8 @@ test_that("calculStat fonctionne avec un vecteur vide", {
   )
 })
 
-test_that("calculStat gère les valeurs négatives", {
-  res <- calculStat(c(-2, -1), 1)
+test_that("calculstats gère les valeurs négatives", {
+  res <- calculstats(c(-2, -1), 1)
 
   expect_equal(
     res$valeur,
@@ -72,8 +72,8 @@ test_that("calculStat gère les valeurs négatives", {
   )
 })
 
-test_that("calculStat propage les valeurs NA", {
-  res <- calculStat(c(1, NA), 1)
+test_that("calculstats propage les valeurs NA", {
+  res <- calculstats(c(1, NA), 1)
 
   expect_equal(
     res$valeur,
