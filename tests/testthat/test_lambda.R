@@ -1,5 +1,6 @@
 library(testthat)
-source("calculStat.R")
+library(here)
+
 test_that("calculStat retourne un data.frame", {
   res <- calculStat(c(1, 2, 3), 1)
 
