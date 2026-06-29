@@ -19,8 +19,9 @@ donnees <- c(1, 2, 3, 4, 5)
 res <- calculStat(donnees, 1)
 
 for (i in 1:length(donnees)) {
-  print(donnees[i])
-}
+  
+  
+  print(donnees[i])}
 
 x <- NULL
 
