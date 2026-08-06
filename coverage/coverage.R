@@ -10,3 +10,4 @@ cov <- file_coverage(
 )
 
 cov
+print(cov)
