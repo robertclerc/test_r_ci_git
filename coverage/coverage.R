@@ -9,4 +9,4 @@ cov <- file_coverage(
   )
 )
 
-print("Couverture du code : ", cov)
+cov
