@@ -8,3 +8,5 @@ cov <- file_coverage(
     here::here("tests", "testthat", "test_lambda.R")
   )
 )
+
+print("Couverture du code : ", cov)
